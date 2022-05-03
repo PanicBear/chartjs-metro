@@ -11,6 +11,7 @@
   "dependencies": {
     "@types/chart.js": "^2.9.37",
     "chart.js": "^3.7.1",
+    "chartjs-plugin-datalabels": "^2.0.0",
     "next": "12.1.5",
     "react": "18.1.0",
     "react-dom": "18.1.0"

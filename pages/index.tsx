@@ -1,7 +1,7 @@
-import Chart, { ChartConfiguration, TooltipItem } from 'chart.js/auto';
+import Chart, { ChartConfiguration } from 'chart.js/auto';
+import ChartDatalabels from 'chartjs-plugin-datalabels';
 import type { NextPage } from 'next';
 import { useEffect, useRef } from 'react';
-import ChartDatalabels from 'chartjs-plugin-datalabels';
 
 type Station = {
   name: string;
@@ -12,37 +12,36 @@ type Station = {
 };
 
 const LRT1: Station[] = [
-  { name: 'North Ave.', lng: 0, lat: 0, x: 0, y: 0 },
-  { name: 'Roosevelt', lng: 0, lat: 0, x: 0, y: 0 },
-  { name: 'Balintawak', lng: 0, lat: 0, x: 0, y: 0 },
-  { name: 'Monumento', lng: 0, lat: 0, x: 0, y: 0 },
-  { name: '5th Ave.', lng: 0, lat: 0, x: 0, y: 0 },
-  { name: 'R. Papa', lng: 0, lat: 0, x: 0, y: 0 },
-  { name: 'Abad Santos', lng: 0, lat: 0, x: 0, y: 0 },
-  { name: 'Blumentritt', lng: 0, lat: 0, x: 0, y: 0 },
-  { name: 'Tayuman', lng: 0, lat: 0, x: 0, y: 0 },
-  { name: 'Bambang', lng: 0, lat: 0, x: 0, y: 0 },
-  { name: 'Doroteo jose', lng: 0, lat: 0, x: 0, y: 0 },
-  { name: 'Carriedo', lng: 0, lat: 0, x: 0, y: 0 },
-  { name: 'Central Terminal', lng: 0, lat: 0, x: 0, y: 0 },
-  { name: 'United nations', lng: 0, lat: 0, x: 0, y: 0 },
-  { name: 'Pedro Gil', lng: 0, lat: 0, x: 0, y: 0 },
-  { name: 'Quirino Ave.', lng: 0, lat: 0, x: 0, y: 0 },
-  { name: 'Vito Cruz', lng: 0, lat: 0, x: 0, y: 0 },
-  { name: 'Gil Puyat', lng: 0, lat: 0, x: 0, y: 0 },
-  { name: 'Libertad', lng: 0, lat: 0, x: 0, y: 0 },
-  { name: 'EDSA', lng: 0, lat: 0, x: 0, y: 0 },
-  { name: 'Baclaran', lng: 0, lat: 0, x: 0, y: 0 },
+  { name: 'Roosevelt', lng: 14.657494, lat: 121.021211, x: 3, y: 15 },
+  { name: 'Balintawak', lng: 14.657344, lat: 121.003961, x: 1, y: 15 },
+  { name: 'Monumento', lng: 14.654094, lat: 120.983906, x: -2, y: 15 },
+  { name: '5th Ave.', lng: 14.64439, lat: 120.9835, x: -2, y: 14 },
+  { name: 'R. Papa', lng: 14.6361592, lat: 120.9825, x: -2, y: 13 },
+  { name: 'Abad Santos', lng: 14.630642, lat: 120.981397, x: -2, y: 12 },
+  { name: 'Blumentritt', lng: 14.622792, lat: 120.982936, x: -2, y: 11 },
+  { name: 'Tayuman', lng: 14.616794, lat: 120.982758, x: -2, y: 10 },
+  { name: 'Bambang', lng: 14.611111, lat: 120.9825, x: -2, y: 9 },
+  { name: 'Doroteo jose, Recto', lng: 14.605475, lat: 120.982069, x: -2, y: 8 },
+  { name: 'Carriedo', lng: 14.599, lat: 120.981358, x: -2, y: 7 },
+  { name: 'Central Terminal', lng: 14.592903, lat: 120.981622, x: -2, y: 6 },
+  { name: 'United nations', lng: 14.582492, lat: 120.984661, x: -2, y: 5 },
+  { name: 'Pedro Gil', lng: 14.576631, lat: 120.987992, x: -1, y: 4.5 },
+  { name: 'Quirino Ave.', lng: 14.570219, lat: 120.991675, x: 0, y: 4 },
+  { name: 'Vito Cruz', lng: 14.563475, lat: 120.994681, x: 1, y: 3.5 },
+  { name: 'Gil Puyat', lng: 14.554128, lat: 120.997178, x: 1, y: 2 },
+  { name: 'Libertad', lng: 14.547783, lat: 120.998631, x: 1, y: 1 },
+  { name: 'EDSA, Taft', lng: 14.538825, lat: 121.000683, x: 1, y: 0 },
+  { name: 'Baclaran', lng: 14.538825, lat: 121.000683, x: 0, y: -1 },
 ];
 
 const LRT2: Station[] = [
-  { name: 'Recto', lng: 14.603497, lat: 120.983403, x: 0, y: 8 },
-  { name: 'Legarda', lng: 14.60085, lat: 120.992692, x: 1, y: 8 },
-  { name: 'Pureza', lng: 14.601667, lat: 121.005194, x: 2, y: 8 },
-  { name: 'V.mapa', lng: 14.603889, lat: 121.016944, x: 3, y: 8 },
-  { name: 'J.Ruiz', lng: 14.610556, lat: 121.026111, x: 5, y: 8 },
-  { name: 'Gilmore', lng: 14.613333, lat: 121.033889, x: 6, y: 9 },
-  { name: 'Betty Go Belmonte', lng: 14.618333, lat: 121.0425, x: 7, y: 10 },
+  { name: 'Doroteo jose, Recto', lng: 14.603497, lat: 120.983403, x: -2, y: 8 },
+  { name: 'Legarda', lng: 14.60085, lat: 120.992692, x: -1, y: 8 },
+  { name: 'Pureza', lng: 14.601667, lat: 121.005194, x: 0, y: 8 },
+  { name: 'V.mapa', lng: 14.603889, lat: 121.016944, x: 1, y: 8 },
+  { name: 'J.Ruiz', lng: 14.610556, lat: 121.026111, x: 4, y: 8 },
+  { name: 'Gilmore', lng: 14.613333, lat: 121.033889, x: 5, y: 9 },
+  { name: 'Betty Go Belmonte', lng: 14.618333, lat: 121.0425, x: 6, y: 10 },
   { name: 'Cubao', lng: 14.622678, lat: 121.052636, x: 8, y: 11 },
   { name: 'Anonas', lng: 14.628, lat: 121.064694, x: 9, y: 11 },
   { name: 'Katipunan', lng: 14.631097, lat: 121.072958, x: 10, y: 11 },
@@ -64,7 +63,7 @@ const MRT3: Station[] = [
   { name: 'Buendia', lng: 14.554203, lat: 121.034094, x: 4, y: 3 },
   { name: 'Ayala', lng: 14.548942, lat: 121.027672, x: 3, y: 2 },
   { name: 'Magallanes', lng: 14.541786, lat: 121.019233, x: 2, y: 1 },
-  { name: 'Taft', lng: 14.537517, lat: 121.001406, x: 1, y: 0 },
+  { name: 'EDSA, Taft', lng: 14.537517, lat: 121.001406, x: 1, y: 0 },
 ];
 
 const Home: NextPage = () => {
@@ -93,7 +92,7 @@ const Home: NextPage = () => {
     const config: ChartConfiguration = {
       type: 'line',
       data: {
-        labels: new Array(15).fill(0).map((_, idx) => idx),
+        labels: new Array(18).fill(0).map((_, idx) => idx - 3),
         datasets: [
           {
             data: LRT1,

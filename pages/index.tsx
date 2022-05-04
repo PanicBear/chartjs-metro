@@ -52,19 +52,19 @@ const LRT2: Station[] = [
 ];
 
 const MRT3: Station[] = [
-  { name: 'North Avenue', lng: 14.6521761, lat: 121.0322232, x: 5, y: 14 },
-  { name: 'Quezon Ave.', lng: 14.642784, lat: 121.0380526, x: 6, y: 13 },
-  { name: 'Kamuning', lng: 14.6351192, lat: 121.0432239, x: 7, y: 12 },
-  { name: 'Cubao', lng: 14.6192257, lat: 121.0511349, x: 8, y: 11 },
-  { name: 'Santolan', lng: 14.607444, lat: 121.0565669, x: 8, y: 9 },
-  { name: 'Ortigas', lng: 14.5878163, lat: 121.0568337, x: 8, y: 7 },
-  { name: 'Shaw Blvd.', lng: 14.5810861, lat: 121.053691, x: 7, y: 6 },
-  { name: 'Boni', lng: 14.5737264, lat: 121.0480613, x: 6, y: 5 },
-  { name: 'Guadalupe', lng: 14.5666846, lat: 121.045334, x: 5, y: 4 },
-  { name: 'Buendia', lng: 14.554467, lat: 121.0343599, x: 4, y: 3 },
-  { name: 'Ayala', lng: 14.548984, lat: 121.0278799, x: 3, y: 2 },
-  { name: 'Magallanes', lng: 14.541403, lat: 121.018481, x: 2, y: 1 },
-  { name: 'Taft', lng: 14.537602, lat: 121.001186, x: 1, y: 0 },
+  { name: 'North Avenue', lng: 14.652444, lat: 121.032167, x: 5, y: 14 },
+  { name: 'Quezon Ave.', lng: 14.642444, lat: 121.038674, x: 6, y: 13 },
+  { name: 'Kamuning', lng: 14.635144, lat: 121.043361, x: 7, y: 12 },
+  { name: 'Cubao', lng: 14.619431, lat: 121.051036, x: 8, y: 11 },
+  { name: 'Santolan', lng: 14.607711, lat: 121.0565669, x: 8, y: 9 },
+  { name: 'Ortigas', lng: 14.5876, lat: 121.0566, x: 8, y: 7 },
+  { name: 'Shaw Blvd.', lng: 14.581397, lat: 121.053681, x: 7, y: 6 },
+  { name: 'Boni', lng: 14.573764, lat: 121.048167, x: 6, y: 5 },
+  { name: 'Guadalupe', lng: 14.566861, lat: 121.045467, x: 5, y: 4 },
+  { name: 'Buendia', lng: 14.554203, lat: 121.034094, x: 4, y: 3 },
+  { name: 'Ayala', lng: 14.548942, lat: 121.027672, x: 3, y: 2 },
+  { name: 'Magallanes', lng: 14.541786, lat: 121.019233, x: 2, y: 1 },
+  { name: 'Taft', lng: 14.537517, lat: 121.001406, x: 1, y: 0 },
 ];
 
 const Home: NextPage = () => {
